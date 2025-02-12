@@ -1,0 +1,62 @@
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  main {
+    max-width: 960px;
+    margin: 20px auto;
+    background-image: url(assets/imgs/grid.png);
+    display: grid;
+    grid-template-columns: 70% 28%;
+    gap: 2%;
+  }
+  
+  header.primary {
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    margin-bottom: 0px;
+    background-color: grey;
+    grid-column: 1 / -1;
+  }
+
+  nav ul li{
+    text-decoration: none;
+    display: inline;
+    max-width: 960px;
+    list-style-type: none;
+  }
+  
+  .post {
+    background-color: grey;
+    padding: 20px;
+    margin: 0;
+    grid-column: 1 / 2;
+    margin-left: 20px;
+    margin-bottom: 20px; 
+  }
+  
+
+  aside {
+    background-color: grey;
+    padding: 20px;
+    margin: 0;
+    grid-column: 2 / 3;
+    margin-right: 20px; 
+    margin-bottom: 20px; 
+  }
+  
+  #colophon{
+  padding: 20px;
+  margin: 20px auto;
+  background-color: grey;
+  max-width: 920px;
+  text-align: center; 
+  position: relative;
+  left: 0;
+  }
