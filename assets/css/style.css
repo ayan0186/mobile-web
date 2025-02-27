@@ -79,3 +79,10 @@ ul li a:hover {
         font-size: 0.8em;
     }
 }
+
+:root {
+    --primary-color: #333;
+    --secondary-color: #fc9630;
+    --background-color: #f4f1d3;
+    --text-color: #333;
+}
