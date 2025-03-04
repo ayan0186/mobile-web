@@ -84,6 +84,71 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+  root {
+    --primanry-color: #94CCEB;
+    --main-bg-color: #F5F5F5;
+    --secondary-bg-color: #aaf7fb;
+    --text-color: #333333;
+    --border-color: #000000;
+  } 
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  body { 
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: var(--text-color);
+    background-color: var(--primanry-color);
+  }
+
+  nav { 
+    padding: 1px; 
+  }
+
+  nav ul{ 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    padding: 0;
+  }
+
+  nav a { 
+    text-decoration: none;
+  }
+
+  nav a:link, a:visited { 
+    display: block; 
+    padding: 20px;
+    text-align: center;
+    color: var(--primanry-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+  }
+
+  body { 
+    justify-content: center;
+    text-align: left;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--primanry-color);
+    color: var(--text-color);
+  }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
