@@ -172,7 +172,7 @@ textarea {
 
   h1, h2 { 
     color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     font-size: 2.5em;
     line-height: 1em;
     padding: 40px 0 20px;
@@ -187,9 +187,8 @@ textarea {
     letter-spacing: 2px;
     margin-bottom: 20px;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
   }
-
 
 img {
   width: 150px;
@@ -307,6 +306,8 @@ footer a:hover {
   mask-mode: alpha;
   -webkit-mask: radial-gradient(#0000 55%, #000 0);
   -webkit-mask-mode: alpha;
+  text-align: center;
+  border-radius: 50%;
 }
 
 [role="progressbar"]::after {
@@ -315,18 +316,12 @@ footer a:hover {
   font-family: Helvetica, Arial, sans-serif;
   font-size: calc(var(--size) / 5);
   color: var(--primary);
+  text-align: center;
 }
 
 /* ==========================================================================
    MEDIA QUERIES
    ========================================================================== */
-
-   @media (max-width: 768px) {
-    nav ul { 
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
   @media (max-width: 600px) {
     h1 {
       font-size: 2.5rem;
@@ -382,7 +377,26 @@ footer a:hover {
     }
   }
 
+  @media screen and (min-width: 768px) {
+    header.container{
+      max-width: 900px;
+    }
+    
+    main.container{
+      max-width: 900px; 
+      grid-template-columns: 36.5% auto;
 
+    }
+
+  @media screen and (max-width: 320px){
+    main.container{
+      grid-template-columns: 1fr;
+    }
+    nav ul{ 
+      grid-template-columns: 1fr;
+    }
+  }
+  }
 
 /* ==========================================================================
    Helper classes
