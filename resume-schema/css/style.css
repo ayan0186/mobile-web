@@ -232,122 +232,24 @@ footer a:hover {
   text-decoration: underline;
 }
 
-#visually-hidden{
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
- section#about p, dl, dt, dd {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text-color);
-  margin-bottom: 15px;
-  font-family: 'Roboto', sans-serif;
-  text-align: left;
-  gap: 20px;
-
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-     opacity: 1;
-  }
-}
-
-@keyframes progress {
-  0% { --percentage: 0; }
-  100% { --percentage: var(--value); }
-}
-
-@property --percentage {
-  syntax: '<number>';
-  inherits: true;
-  initial-value: 0;
-}
-
-[role="progressbar"] {
-  --percentage: var(--value);
-  --primary: #369;
-  --secondary: #adf;
-  --size: 100px;
-  animation: progress 2s 0.5s forwards;
-  width: var(--size);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-  display: inline-block; /* Align in a line */
-  margin-right: 20px; /* Space between bars */
-  vertical-align: middle; /* Align them properly */
-  text-align: center; /* Center the text */
-}
-
-[role="progressbar"]::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
-  mask: radial-gradient(white 55%, transparent 0);
-  mask-mode: alpha;
-  -webkit-mask: radial-gradient(#0000 55%, #000 0);
-  -webkit-mask-mode: alpha;
-  text-align: center;
-  border-radius: 50%;
-}
-
-[role="progressbar"]::after {
-  counter-reset: percentage var(--value);
-  content: counter(percentage) '%';
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: calc(var(--size) / 5);
-  color: var(--primary);
-  text-align: center;
-}
-
 /* ==========================================================================
    MEDIA QUERIES
    ========================================================================== */
   @media (max-width: 600px) {
+    main.container{
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    nav ul {
+      grid-template-columns: 1fr 1fr;
+    }
+
     h1 {
       font-size: 2.5rem;
       text-align: center;
     }
   }
-  
-  @media (max-width: 480px) {
-    nav ul { 
-      grid-template-columns: 1fr;
-    }
-  }
 
-  @media (max-width: 768px) {
-    nav ul {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    h1 {
-      font-size: 2.8rem;
-    }
-  
-    section {
-      padding: 20px;
-    }
-  }
   
   @media (max-width: 480px) {
     nav ul {
@@ -363,7 +265,40 @@ footer a:hover {
     }
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
+    header.container{
+      max-width: 900px;
+    }
+    
+    main.container{
+      max-width: 900px; 
+      grid-template-columns: 36.5% auto;
+
+    }
+
+    nav ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    h1 {
+      font-size: 2.8rem;
+    }
+  
+    section {
+      padding: 20px;
+    }
+  }
+  
+  @media screen and (max-width = 2560px) {
+    header.container{
+      max-width: 2200px;
+    }
+    
+    main.container{
+      max-width: 2200px; 
+      grid-template-columns: 36.5% auto;
+    }
+
     nav ul {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -377,27 +312,34 @@ footer a:hover {
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width = 359px) {
     header.container{
-      max-width: 900px;
+      max-width: 300px;
     }
     
     main.container{
-      max-width: 900px; 
+      max-width: 300px; 
       grid-template-columns: 36.5% auto;
-
     }
 
-  @media screen and (max-width: 320px){
-    main.container{
-      grid-template-columns: 1fr;
+    nav ul {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 10px;
     }
-    nav ul{ 
-      grid-template-columns: 1fr;
+
+    nav ul li {
+      padding: 10px;
+      size: 10px;
+    }
+  
+    h1 {
+      font-size: 2.8rem;
+    }
+  
+    section {
+      padding: 20px;
     }
   }
-  }
-
 /* ==========================================================================
    Helper classes
    ========================================================================== */
