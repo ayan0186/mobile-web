@@ -43,6 +43,14 @@ ul li a {
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+ 
+.site{
+    font-size: 1.2em;
+    padding: 12px 20px;
+    border-radius: 5px;
+    color: #333;
+    list-style-type: disc;
+}
 
 ul li a:hover {
     background-color: #fc9630;
