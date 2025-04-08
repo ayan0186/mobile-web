@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Rapid Prototype</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="">
 
@@ -19,15 +20,150 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
 
 <body>
-<p>Hello, World!</p>
+  <header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Glamor Threading Salon</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Hours</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <section class="banner">
+    <img src="img/placeholder-img.png" alt="glamor threading salon" class="img-fluid" width="100%">
+    <div class="container">
+      <p class="text-center">Your one-stop destination for all your beauty needs.</p>
+      <p class="text-center">We offer a wide range of services including threading, waxing, and facials.</p>
+      <p class="text-center">Our experienced staff is dedicated to providing you with the best service possible.</p>
+      <p class="text-center">Visit us today and experience the difference!</p>
+    </div>
+
+<h2>Meet our Technicians</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <img src="img/placeholder-img.png" alt="Technician 1" class="img-fluid">
+          <p>Technician</p>
+        </div>
+        <div class="col-sm-4">
+          <img src="img/placeholder-img.png" alt="Technician 2" class="img-fluid">
+          <p>Technician</p>
+        </div>
+        <div class="col-sm-4">
+          <img src="img/placeholder-img.png" alt="Technician 3" class="img-fluid">
+          <p>Technician</p>
+        </div>
+        <div class="col-sm-4">
+          <img src="img/placeholder-img.png" alt="Technician 3" class="img-fluid">
+          <p>Technician</p>
+        </div>
+        <div class="col-sm-4">
+          <img src="img/placeholder-img.png" alt="Technician 3" class="img-fluid">
+          <p>Technician</p>
+        </div>
+        <div class="col-sm-4">
+          <img src="img/placeholder-img.png" alt="Technician 3" class="img-fluid">
+          <p>Technician</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="container">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+    </div>
+
+      <h3>Our Works</h3>
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/placeholder-img.png" class="d-block w-100" alt="eyebrow threading">
+          </div>
+          <div class="carousel-item">
+            <img src="img/placeholder-img.png" class="d-block w-100" alt="waxing">
+          </div>
+          <div class="carousel-item">
+            <img src="img/placeholder-img.png" class="d-block w-100" alt="lashes">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <section class="hours">
+      <h2>Business Hours</h2>
+      <div class="container">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Monday: 9:00 AM - 8:00 PM</li>
+          <li class="list-group-item">Tuesday: 9:00 AM - 8:00 PM</li>
+          <li class="list-group-item">Wednesday: 9:00 AM - 8:00 PM</li>
+          <li class="list-group-item">Thursday: 9:00 AM - 8:00 PM</li>
+          <li class="list-group-item">Friday: 9:00 AM - 8:00 PM</li>
+          <li class="list-group-item">Saturday: 10:00 AM - 6:00 PM</li>
+          <li class="list-group-item">Sunday: Closed</li>
+        </ul
+      </div>
+    </section>
+
+    <section class="footer">
+  <footer></footer>
+    </section>
+  </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
 </body>
-
-
 </html>
