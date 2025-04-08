@@ -88,6 +88,34 @@ img {
   height: auto;
 }
 
+.navbar
+{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+  
+
+.banner img {
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 400px; /* Adjust height as necessary */
+}
+
+.carousel img {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px; /* Adjust height as necessary */
+}
+
+.map-container {
+  margin-top: 20px;
+}
+
+.map-container iframe {
+  width: 350px;
+  height: 300px; /* You can adjust this height */
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
