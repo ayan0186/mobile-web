@@ -83,6 +83,46 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+   section {
+    height: 380px;
+    width: 380px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-left: auto;
+    border: 2px solid #666;
+    padding: 10px;
+    }
+
+/* ==========================================================================
+  Media Queries
+========================================================================== */
+@media only screen and (min-width: 600px) {
+  section {
+    height: 600px;
+    width: 600px;
+    padding: 10px;
+  }
+  }
+  
+  
+  @media only screen and (min-width: 768px) {
+  section {
+    height: 768px;
+    width: 768px;
+    padding: 10px;
+  }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+  section {
+    height: 1024px;
+    width: 1024px;
+    padding: 10px;
+  }
+  }
+
+
 
 /* ==========================================================================
    Helper classes
