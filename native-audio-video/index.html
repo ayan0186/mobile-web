@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <h1>HTML5 Audio and Video Demo</h1>
+  <p>Demonstrating the use of HTML5 audio and video elements.</p>
+
+  <h2>Video Example</h2>
+  <div class = "video-js">
+  <video
+  id="my-video"
+  class="video-js"
+  controls
+  preload="auto"
+  width="640"
+  height="264"
+  poster="your-thumbnail.jpg"
+  data-setup="{}">
+
+  <source src="video/2330708-uhd_3840_2160_24fps.mp4" type="video/mp4" />
+  <!-- You can add more source types for compatibility -->
+  <p class="vjs-no-js">
+    To view this video please enable JavaScript, and consider upgrading to a
+    web browser that supports HTML5 video.
+  </p>
+</video>
+</div>
+
+ <h2>Audio Example</h2>
+<div class="audio">
+ 
+  <source src="audio/Frozen-Jungle_fma-145626_001_00-00-17.mp3" type= "audio/mpeg">
+  <audio controls>
+    <source src="audio/Frozen-Jungle_fma-145626_001_00-00-17.mp3" type="audio/mpeg">
+    <p class="vjs-no-js">
+      To listen to this audio please enable JavaScript, and consider upgrading to a
+      web browser that supports HTML5 audio.
+    </p>
+  </audio>
+</div>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
