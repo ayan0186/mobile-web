@@ -1,6 +1,9 @@
 /*! HTML5 Boilerplate v9.0.0-RC1 | MIT License | https://html5boilerplate.com/ */
 
-/* Base styles */
+/* ========================================================================== */
+/* Base Styles */
+/* ========================================================================== */
+
 html {
   color: #222;
   font-size: 1em;
@@ -41,17 +44,21 @@ textarea {
 }
 
 /* ========================================================================== */
-/* Author's custom styles */
+/* Custom Variables */
 /* ========================================================================== */
 
 :root {
-  --primary-color: #b76e79; /* Deep Muted Rose Pink */
-  --secondary-color: #fdf6f8; /* Very Light Pink */
+  --primary-color: #b76e79;
+  --secondary-color: #fdf6f8;
   --text-color: #333;
   --background-color: #ffffff;
-  --nav-background: #a55866; /* Dusty Dark Pink */
-  --hover-color: #944f5c; /* Darker hover pink */
+  --nav-background: #a55866;
+  --hover-color: #944f5c;
 }
+
+/* ========================================================================== */
+/* Reset Defaults */
+/* ========================================================================== */
 
 * {
   margin: 0;
@@ -61,17 +68,23 @@ textarea {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--secondary-color);
+  background: var(--secondary-color);
   color: var(--text-color);
 }
 
+/* ========================================================================== */
 /* Headings */
+/* ========================================================================== */
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
   color: var(--primary-color);
 }
 
+/* ========================================================================== */
 /* Navbar */
+/* ========================================================================== */
+
 nav {
   background: var(--nav-background);
   color: white;
@@ -82,8 +95,14 @@ nav {
   font-weight: bold;
   position: sticky;
   top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  z-index: 9999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+nav.scrolled {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 nav ul {
@@ -112,7 +131,7 @@ nav a:hover {
 }
 
 .logo img {
-  height: 50px; /* FIXED: not too tall anymore */
+  height: 50px;
   width: auto;
 }
 
@@ -126,21 +145,52 @@ nav a:hover {
   color: var(--hover-color);
 }
 
+/* ========================================================================== */
+/* Hamburger Button */
+/* ========================================================================== */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 10000;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background: white;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* ========================================================================== */
 /* Banner */
+/* ========================================================================== */
+
 .banner {
   position: relative;
   width: 100%;
   height: 500px;
   overflow: hidden;
-  background-color: var(--background-color);
+  background: var(--background-color);
 }
 
 .banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  display: block;
 }
 
 .banner-text {
@@ -149,19 +199,20 @@ nav a:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  background: rgba(255, 255, 255, 0.85); /* Soft white box (85% visible) */
+  background: rgba(255, 255, 255, 0.9);
   padding: 30px 40px;
   border-radius: 15px;
-  color: #333; /* Dark text, easier to read */
   font-size: 1.4rem;
-  font-family: 'Poppins', sans-serif;
-  max-width: 600px; /* NEW: Limits the size */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  color: var(--text-color);
+  max-width: 600px;
   animation: fadeIn 2s ease forwards;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+/* ========================================================================== */
+/* Main Layout */
+/* ========================================================================== */
 
-/* Containers */
 .container {
   padding: 40px 20px;
   max-width: 1200px;
@@ -171,13 +222,11 @@ nav a:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Centered Text */
 .text-center {
   text-align: center;
   margin-bottom: 20px;
 }
 
-/* Row */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -186,15 +235,14 @@ nav a:hover {
   margin-top: 20px;
 }
 
-/* Column (Technicians) */
 .col {
   flex: 1 1 250px;
   max-width: 250px;
   background: var(--secondary-color);
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .col img {
@@ -204,7 +252,10 @@ nav a:hover {
   border-radius: 5px;
 }
 
-/* Services List */
+/* ========================================================================== */
+/* Services Section */
+/* ========================================================================== */
+
 .services ul {
   list-style: none;
   padding: 0;
@@ -219,7 +270,10 @@ nav a:hover {
   font-weight: bold;
 }
 
+/* ========================================================================== */
 /* Carousel */
+/* ========================================================================== */
+
 .carousel {
   position: relative;
   overflow: hidden;
@@ -227,19 +281,10 @@ nav a:hover {
   height: 350px;
   margin-top: 30px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
 }
 
 .carousel-inner img {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -250,14 +295,15 @@ nav a:hover {
 
 .carousel-inner img.active {
   opacity: 1;
-  z-index: 1;
 }
 
+/* ========================================================================== */
 /* Hours Table */
+/* ========================================================================== */
+
 .hours table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
   background: var(--background-color);
 }
 
@@ -267,7 +313,10 @@ nav a:hover {
   text-align: center;
 }
 
+/* ========================================================================== */
 /* Footer */
+/* ========================================================================== */
+
 footer {
   background: var(--nav-background);
   color: black;
@@ -291,166 +340,29 @@ footer ul {
 
 footer li {
   margin-bottom: 10px;
-  font-size: 16px;
 }
 
-/* Responsive Layout */
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column;
-    align-items: center;
-  }
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
+/* ========================================================================== */
+/* Media Queries */
+/* ========================================================================== */
 
-.intro-text {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding: 40px 50px;
-  font-size: 1.5rem; /* a little bigger text */
-  text-align: center;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* ==========================================================================
-   Responsive Design
-   ========================================================================== */
-
-/* Tablet View (width between 768px and 1024px) */
+/* Tablet */
 @media (max-width: 1024px) {
   nav ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     text-align: center;
-    margin-top: 10px;
   }
   nav {
     flex-direction: column;
   }
-
-  .row {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .intro-text {
-    padding: 30px;
-    font-size: 1.3rem;
-  }
-
-  h1 {
-    font-size: 2.2rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
 }
 
-/* Mobile View (width smaller than 768px) */
+/* Mobile */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: var(--nav-background);
-    text-align: center;
-  }
-
-  nav ul.show {
     display: flex;
-  }
-
-  nav {
-    flex-direction: column;
-    padding: 10px 20px;
-  }
-
-  .logo img {
-    width: 60px;
-  }
-
-  .logo span {
-    font-size: 20px;
-  }
-
-  .banner {
-    height: 300px;
-  }
-
-  .banner img {
-    object-position: center center;
-  }
-
-  .row {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .col img {
-    height: 180px;
-  }
-
-  .intro-text {
-    padding: 20px;
-    font-size: 1.1rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-  }
-
-  p {
-    font-size: 0.95rem;
-  }
-
-  footer iframe {
-    height: 250px;
-  }
-}
-
-/* ==========================================================================  
-   Responsive Navigation and Hamburger Menu
-   ========================================================================== */
-
-/* Hide hamburger by default (Desktop/Tablet) */
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
-
-/* Mobile View */
-@media (max-width: 768px) {
-
-  /* Show hamburger only on mobile */
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    top: 18px;
-    right: 20px;
-    z-index: 1500;
   }
 
   nav {
@@ -461,16 +373,14 @@ footer li {
   nav ul {
     display: none;
     flex-direction: column;
+    align-items: center;
     width: 100%;
-    background-color: var(--nav-background);
+    background: var(--nav-background);
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 0;
-    text-align: center;
     padding: 20px 0;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    border-radius: 0 0 8px 8px;
+    z-index: 9998;
   }
 
   nav ul.show {
@@ -478,26 +388,24 @@ footer li {
   }
 
   nav ul li {
-    margin: 15px 0;
+    margin: 10px 0;
   }
 
-  nav ul li a {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 10px 20px;
+  .banner {
+    height: 300px;
   }
 
-  .logo {
-    flex-direction: row;
-    align-items: center;
+  .row {
+    flex-direction: column;
+    gap: 15px;
   }
+}
 
-  .logo img {
-    width: 50px;
-  }
+/* ========================================================================== */
+/* Animations */
+/* ========================================================================== */
 
-  .logo span {
-    font-size: 20px;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
