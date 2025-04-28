@@ -21,44 +21,87 @@
   <script src="js/app.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BeautySalon",
-    "name": "Glamor Threading Salon",
-    "description": "Top-rated threading salon near Little Rock and Maumelle, Arkansas. Specializing in eyebrow threading, eyebrow tinting, eyelash extensions, and facial waxing.",
-    "image": "https://yourwebsite.com/img/placeholder-img.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "13236 Crystal Hill RD",
-      "addressLocality": "North Little Rock",
-      "addressRegion": "AR",
-      "postalCode": "72113",
-      "addressCountry": "US"
-    },
-    "telephone": "(501) 123-4567",
-    "email": "contact@glamorthreading.com",
-    "url": "https://yourwebsite.com",
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 34.8297715,
-      "longitude": -92.3936006
-    },
-    "areaServed": [
-      { "@type": "City", "name": "Little Rock" },
-      { "@type": "City", "name": "Maumelle" },
-      { "@type": "State", "name": "Arkansas" }
-    ],
-    "openingHours": ["Mo-Fr 09:00-17:00"],
-    "priceRange": "$$",
-    "serviceOffered": [
-      "Eyebrow Threading",
-      "Eyebrow Tinting",
-      "Eyelash Extensions",
-      "Facial Waxing",
-      "Full Face Threading"
-    ]
-  }
-  </script>
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "Glamor Threading Salon",
+      "description": "Top-rated threading salon near Little Rock and Maumelle, Arkansas. Specializing in eyebrow threading, eyebrow tinting, eyelash extensions, and facial waxing.",
+      "telephone": "(501) 123-4567",
+      "email": "contact@glamorthreading.com",
+      "url": "https://yourwebsite.com/",
+      "openingHours": "Mo-Fr 09:00-17:00",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "13236 Crystal Hill RD",
+        "addressLocality": "North Little Rock",
+        "addressRegion": "AR",
+        "postalCode": "72113",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.8297715,
+        "longitude": -92.3936006
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Little Rock"
+        },
+        {
+          "@type": "City",
+          "name": "Maumelle"
+        },
+        {
+          "@type": "State",
+          "name": "Arkansas"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Eyebrow Threading"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Eyebrow Tinting"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Eyelash Extensions"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Facial Waxing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Full Face Threading"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
 </head>
 
 <body>
@@ -99,15 +142,6 @@
     
   </section>
 
-  <section class="container">
-    <h2 class="text-center">Meet Our Technicians</h2>
-    <div class="row">
-      <div class="col"><img src="img/placeholder-img.png" alt="Technician 1"><p>Technician 1</p></div>
-      <div class="col"><img src="img/placeholder-img.png" alt="Technician 2"><p>Technician 2</p></div>
-      <div class="col"><img src="img/placeholder-img.png" alt="Technician 3"><p>Technician 3</p></div>
-    </div>
-  </section>
-
   <section class="services container" id="services">
     <h2 class="text-center">Our Services</h2>
     <ul>
@@ -121,9 +155,8 @@
 
   <section class="carousel" id="carousel">
     <div class="carousel-inner">
-      <img src="img/placeholder-img.png" alt="Eyebrow Threading" class="active">
-      <img src="icon.png" alt="Waxing">
-      <img src="img/placeholder-img.png" alt="Lashes">
+      <img src="img/463277055_8395825603868752_7440951908978967199_n.jpg" alt="" class="active">
+      <img src="img/464782736_8464335493684429_6442082948732687780_n.jpg" alt="">
     </div>
   
     <div class="carousel-dots">
