@@ -4,6 +4,7 @@ const navLinks = document.querySelector('nav ul');
 
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('show');
+  menuToggle.classList.toggle('open');
 });
 
 // Carousel Auto Slide and Dots
