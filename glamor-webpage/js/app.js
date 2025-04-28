@@ -6,15 +6,31 @@ menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('show');
 });
 
-// Carousel auto-switch (optional)
-const carouselImages = document.querySelectorAll('.carousel img');
-let currentImageIndex = 0;
+// Carousel Auto Slide and Dots
+const carouselImages = document.querySelectorAll('.carousel-inner img');
+const dots = document.querySelectorAll('.dot');
+let current = 0;
 
-function showNextImage() {
-  carouselImages[currentImageIndex].classList.remove('active');
-  currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
-  carouselImages[currentImageIndex].classList.add('active');
+function showSlide(index) {
+  carouselImages.forEach(img => img.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
+
+  carouselImages[index].classList.add('active');
+  dots[index].classList.add('active');
 }
 
-// Change carousel image every 5 seconds
-setInterval(showNextImage, 5000);
+function nextSlide() {
+  current = (current + 1) % carouselImages.length;
+  showSlide(current);
+}
+
+// Auto move every 5 seconds
+setInterval(nextSlide, 5000);
+
+// Click on dots to move
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    current = index;
+    showSlide(index);
+  });
+});

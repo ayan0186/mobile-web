@@ -342,6 +342,13 @@ footer li {
   margin-bottom: 10px;
 }
 
+.made-by {
+  font-size: 14px;
+  margin-top: 15px;
+  color: #555; /* Slightly lighter gray so it doesn't overpower */
+}
+
+
 /* ========================================================================== */
 /* Media Queries */
 /* ========================================================================== */
