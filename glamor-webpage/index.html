@@ -18,7 +18,43 @@
   <meta property="og:description" content="Top-rated eyebrow threading, waxing, and beauty salon in Little Rock and Maumelle.">
   <meta property="og:type" content="website">
 
-  <script src="js/app.js" defer></script>
+  <script defer>
+    // Hamburger toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('nav ul');
+      
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+
+      // Carousel
+      const images = document.querySelectorAll('.carousel-inner img');
+      const dots = document.querySelectorAll('.dot');
+      let current = 0;
+
+      function showSlide(index) {
+        images.forEach(img => img.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        images[index].classList.add('active');
+        dots[index].classList.add('active');
+      }
+
+      function nextSlide() {
+        current = (current + 1) % images.length;
+        showSlide(current);
+      }
+
+      setInterval(nextSlide, 5000);
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          current = index;
+          showSlide(index);
+        });
+      });
+    });
+  </script>
 
   <script type="application/ld+json">
     {
@@ -45,156 +81,99 @@
         "longitude": -92.3936006
       },
       "areaServed": [
-        {
-          "@type": "City",
-          "name": "Little Rock"
-        },
-        {
-          "@type": "City",
-          "name": "Maumelle"
-        },
-        {
-          "@type": "State",
-          "name": "Arkansas"
-        }
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Eyebrow Threading"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Eyebrow Tinting"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Eyelash Extensions"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Facial Waxing"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Full Face Threading"
-            }
-          }
-        ]
-      }
+        { "@type": "City", "name": "Little Rock" },
+        { "@type": "City", "name": "Maumelle" },
+        { "@type": "State", "name": "Arkansas" }
+      ]
     }
-    </script>
-    
+  </script>
 </head>
 
 <body>
+<a href="#maincontent" class="skip-link">Skip to Content</a>
 
-  <header>
-    <nav>
-      <a href="index.html" class="logo">
-        <img src="glamor-icon-removebg-preview.png" alt="Glamor Threading Logo">
-        <span>Glamor Threading Salon</span>
-      </a>
-  
-      <!-- Hamburger button with 3 spans for animation -->
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-  
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#hours">Hours</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-
-<main>
-  <section class="banner">
-    <img src="img/glamor_inside.jpg" alt="Inside Glamor Threading Salon">
-  </section>
-
-  <section class="intro-text container text-center">
-    <section class="intro-text">
-      <p>Glamor Threading Salon is a proud family-owned business where every guest is treated like family. We believe in creating a warm, welcoming atmosphere where you can relax, refresh, and leave feeling beautiful and cared for.</p>
-    </section>
-    
-  </section>
-
-  <section class="services container" id="services">
-    <h2 class="text-center">Our Services</h2>
+<header>
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="glamor-icon-removebg-preview.png" alt="Glamor Threading Logo">
+      <h1>Glamor Threading Salon</h1>
+    </a>
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul>
-      <li>Eyebrow Threading</li>
-      <li>Eyebrow Tinting</li>
-      <li>Eyelash Extensions</li>
-      <li>Facial Waxing</li>
-      <li>Full Face Threading</li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#hours">Hours</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-  </section>
+  </nav>
+</header>
 
-  <section class="carousel" id="carousel">
-    <div class="carousel-inner">
-      <img src="img/463277055_8395825603868752_7440951908978967199_n.jpg" alt="" class="active">
-      <img src="img/464782736_8464335493684429_6442082948732687780_n.jpg" alt="">
+<main id="maincontent">
+
+<section class="banner">
+  <img src="img/glamor_inside.jpg" alt="Inside Glamor Threading Salon">
+</section>
+
+<section class="intro-text container text-center">
+  <p>Glamor Threading Salon is a proud family-owned business where every guest is treated like family. We believe in creating a warm, welcoming atmosphere where you can relax, refresh, and leave feeling beautiful and cared for.</p>
+</section>
+
+<section class="services container" id="services">
+  <h2 class="text-center">Our Services</h2>
+  <ul>
+    <li>Eyebrow Threading</li>
+    <li>Eyebrow Tinting</li>
+    <li>Eyelash Extensions</li>
+    <li>Facial Waxing</li>
+    <li>Full Face Threading</li>
+  </ul>
+</section>
+
+<section class="carousel" id="carousel">
+  <div class="carousel-inner">
+    <img src="img/463277055_8395825603868752_7440951908978967199_n.jpg" alt="" class="active">
+    <img src="img/464782736_8464335493684429_6442082948732687780_n.jpg" alt="">
+  </div>
+  <div class="carousel-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+<section class="hours container" id="hours">
+  <h2 class="text-center">Business Hours</h2>
+  <table>
+    <thead>
+      <tr><th>Day</th><th>Hours</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Monday-Friday</td><td>9:00 AM - 5:00 PM</td></tr>
+      <tr><td>Saturday-Sunday</td><td>Closed</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="footer" id="contact">
+  <footer>
+    <div class="container">
+      <h2 class="text-center">Find Us</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.052536936449!2d-92.3936006237973!3d34.829771576275796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d2a1e530cca88b%3A0x703ebcc58e8f1f8a!2sGlamor%20Threading%20Salon!5e0!3m2!1sen!2sus!4v1744130517676!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+
+      <ul>
+        <li><strong>Address:</strong> 13236 Crystal Hill RD, North Little Rock, AR 72113</li>
+        <li><strong>Phone:</strong> (501) 123-4567</li>
+        <li><strong>Email:</strong> contact@glamorthreading.com</li>
+      </ul>
+      <p>© 2025 Glamor Threading Salon. All Rights Reserved.</p>
+      <p class="made-by">Website made with ❤️ by Ayan Huda</p>
     </div>
-  
-    <div class="carousel-dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </section>
-  
-  <section class="hours container" id="hours">
-    <h2 class="text-center">Business Hours</h2>
-    <table>
-      <thead>
-        <tr><th>Day</th><th>Hours</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Monday-Friday</td><td>9:00 AM - 5:00 PM</td></tr>
-        <tr><td>Saturday-Sunday</td><td>Closed</td></tr>
-      </tbody>
-    </table>
-  </section>
+  </footer>
+</section>
 
-  <section class="footer" id="contact">
-    <footer>
-      <div class="container">
-        <h2 class="text-center">Find Us</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.052536936449!2d-92.3936006237973!3d34.829771576275796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d2a1e530cca88b%3A0x703ebcc58e8f1f8a!2sGlamor%20Threading%20Salon!5e0!3m2!1sen!2sus!4v1744130517676!5m2!1sen!2sus"></iframe>
-
-        <ul>
-          <li><strong>Address:</strong> 13236 Crystal Hill RD, North Little Rock, AR 72113</li>
-          <li><strong>Phone:</strong> (501) 123-4567</li>
-          <li><strong>Email:</strong> contact@glamorthreading.com</li>
-        </ul>
-        <p>© 2025 Glamor Threading Salon. All Rights Reserved.</p>
-        <p class="made-by">Website made with ❤️ by Ayan Huda</p>
-      </div>
-    </footer>
-  </section>
 </main>
 
 </body>
