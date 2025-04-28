@@ -124,7 +124,7 @@
 </section>
 
 <section class="services container" id="services">
-  <h2 class="text-center">Our Services</h2>
+  <h2 class="text-center fade-in">Our Services</h2>
   <ul>
     <li>Eyebrow Threading</li>
     <li>Eyebrow Tinting</li>
@@ -177,6 +177,25 @@
 </section>
 
 </main>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    function checkFadeIn() {
+      const triggerBottom = window.innerHeight * 0.85; // adjust if you want
+
+      fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < triggerBottom) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkFadeIn);
+    checkFadeIn(); // run once in case already visible
+  });
+</script>
 
 </body>
 </html>
