@@ -241,4 +241,18 @@ footer li {
   .carousel-inner {
     height: 300px;
   }
+  .menu-toggle.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .menu-toggle span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    display: block;
+    border-radius: 2px;
+  }
 }
