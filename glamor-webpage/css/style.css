@@ -70,6 +70,8 @@ nav a:hover {
 
 .logo img {
   height: 50px;
+  width: auto;
+  
 }
 
 /* Hamburger */
