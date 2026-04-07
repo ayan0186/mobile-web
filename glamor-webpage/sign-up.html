@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | Glamor Salon</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <main class="signin-page">
+        <section class="signin-card">
+            <h1>Create account</h1>
+            <p>Sign up to start booking appointments.</p>
+
+            <p id="errorMessage"   style="color:red;   display:none;"></p>
+            <p id="successMessage" style="color:green; display:none;"></p>
+
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="firstName">First name</label>
+                    <input type="text" id="firstName" placeholder="Jane" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last name</label>
+                    <input type="text" id="lastName" placeholder="Doe" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone number</label>
+                    <input type="tel" id="phone" placeholder="816-555-1234" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create a password" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm password</label>
+                    <input type="password" id="confirmPassword" placeholder="Repeat your password" required />
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary-btn">Sign Up</button>
+                </div>
+
+                <div class="register">
+                    <button type="button" onclick="window.location.href='sign-in.html'">
+                        Already have an account? Sign in
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/utils.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

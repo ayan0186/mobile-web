@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Booking | Glamor Salon</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<main class="signin-page">
+  <section class="signin-card">
+    <h1>Welcome, <span id="customerName"></span></h1>
+    <p>Book your appointment below.</p>
+
+    <p id="errorMessage"   style="color:red;   display:none;"></p>
+    <p id="successMessage" style="color:green; display:none;"></p>
+
+    <form id="bookingForm">
+      <div class="form-group">
+        <label>Choose your service(s) *</label>
+        <div id="servicesList">Loading services...</div>
+      </div>
+
+      <div class="form-group">
+        <label>Total: $<span id="totalPrice">0.00</span></label>
+      </div>
+
+      <div class="form-group">
+        <label for="appointmentDate">Choose a date *</label>
+        <input type="date" id="appointmentDate" required />
+      </div>
+
+      <div class="form-group">
+        <label for="appointmentTime">Choose a time *</label>
+        <input type="time" id="appointmentTime" required />
+      </div>
+
+      <div class="form-group">
+        <label for="beauticianSelect">Preferred beautician (optional)</label>
+        <select id="beauticianSelect">
+          <option value="">No preference</option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="primary-btn">Book</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<script src="js/utils.js"></script>
+<script src="js/booking.js"></script>
+</body>
+</html>

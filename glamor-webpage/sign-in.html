@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In | Glamor Salon</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="signin-page">
+      <section class="signin-card">
+        <h1>Sign in</h1>
+        <p>Enter your email and password to access your account.</p>
+
+        <!-- Added id="loginForm" so login.js can find it -->
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required />
+          </div>
+
+          <!-- Error message box, hidden by default -->
+          <p id="errorMessage" style="color:red; display:none;"></p>
+
+          <div class="forgot-password">
+            <button type="button" onclick="window.location.href='reset-password.html'">Forgot password?</button>
+          </div>
+          <div class="register">
+            <button type="button" onclick="window.location.href='sign-up.html'">Don't have an account? Sign up</button>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="primary-btn">Sign In</button>
+          </div>
+        </form>
+
+      </section>
+    </main>
+
+    <script src="js/login.js"></script>
+    <script src="js/utils.js"></script>
+  </body>
+</html>

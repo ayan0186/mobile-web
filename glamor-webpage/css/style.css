@@ -257,3 +257,140 @@ footer li {
     border-radius: 2px;
   }
 }
+
+.signin-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #f9eef2;
+}
+
+.signin-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 36px 32px;
+  border-radius: 18px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.08);
+}
+
+.signin-card h1 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.signin-card p {
+  margin: 0 0 28px;
+  color: #6a5a62;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d9c8cf;
+  border-radius: 12px;
+  background: #faf5f7;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #b76e79;
+  box-shadow: 0 0 0 4px rgba(183, 110, 121, 0.12);
+}
+
+.form-actions {
+  display: grid;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+button.primary-btn,
+button.link-btn {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+button.primary-btn {
+  background: #a55866;
+  color: white;
+  font-weight: 700;
+}
+
+button.primary-btn:hover {
+  background: #8c4d5b;
+}
+
+button.link-btn {
+  background: transparent;
+  color: #a55866;
+  border: 1px solid #a55866;
+}
+
+button.link-btn:hover {
+  background: #f6d8df;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.forgot-password button {
+  width: auto;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #a55866;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.forgot-password button:hover {
+  color: #8c4d5b;
+}
+
+.register {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.register button {
+  width: auto;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #a55866;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.register button:hover {
+  color: #8c4d5b;
+}
+
+@media (max-width: 480px) {
+  .signin-card {
+    padding: 28px 22px;
+  }
+}
