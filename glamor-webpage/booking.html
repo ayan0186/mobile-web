@@ -15,37 +15,31 @@
     <p id="errorMessage"   style="color:red;   display:none;"></p>
     <p id="successMessage" style="color:green; display:none;"></p>
 
-    <form id="bookingForm">
-      <div class="form-group">
-        <label>Choose your service(s) *</label>
-        <div id="servicesList">Loading services...</div>
-      </div>
+    <!-- booking.html -->
+<form id="bookingForm" action="process_booking.php" method="POST">
+  <div class="form-group">
+    <label for="appointmentDate">Choose a date *</label>
+    <input type="date" id="appointmentDate" name="appointmentDate" required />
+  </div>
 
-      <div class="form-group">
-        <label>Total: $<span id="totalPrice">0.00</span></label>
-      </div>
+  <div class="form-group">
+    <label for="appointmentTime">Choose a time *</label>
+    <input type="time" id="appointmentTime" name="appointmentTime" required />
+  </div>
 
-      <div class="form-group">
-        <label for="appointmentDate">Choose a date *</label>
-        <input type="date" id="appointmentDate" required />
-      </div>
+  <div class="form-group">
+    <label for="beauticianSelect">Preferred beautician (optional)</label>
+    <select id="beauticianSelect" name="beauticianSelect">
+      <option value="">No preference</option>
+      <!-- You can manually add IDs here from your Beauticians table -->
+      <option value="1">Jane Smith</option> 
+    </select>
+  </div>
 
-      <div class="form-group">
-        <label for="appointmentTime">Choose a time *</label>
-        <input type="time" id="appointmentTime" required />
-      </div>
-
-      <div class="form-group">
-        <label for="beauticianSelect">Preferred beautician (optional)</label>
-        <select id="beauticianSelect">
-          <option value="">No preference</option>
-        </select>
-      </div>
-
-      <div class="form-actions">
-        <button type="submit" class="primary-btn">Book</button>
-      </div>
-    </form>
+  <div class="form-actions">
+    <button type="submit" class="primary-btn">Book Now</button>
+  </div>
+</form>
   </section>
 </main>
 
