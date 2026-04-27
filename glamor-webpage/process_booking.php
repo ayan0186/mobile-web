@@ -1,32 +1,48 @@
 <?php
-// process_booking.php
-include 'config.php'; // Must contain session_start() and $conn
+session_start();
+header('Content-Type: application/json');
 
-// Check if user is logged in
-if (!isset($_SESSION['user_id'])) {
-    header("Location: sign-in.html"); // Redirect if not logged in
+include 'config.php';
+
+$data = json_decode(file_get_contents("php://input"), true);
+
+if (!$data) {
+    http_response_code(400);
+    echo json_encode(["success" => false, "message" => "No data received"]);
     exit;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get values from the form's 'name' attributes
-    $customer_id = $_SESSION['user_id']; 
-    $date = $_POST['appointmentDate'];
-    $time = $_POST['appointmentTime'];
-    $beautician_id = !empty($_POST['beauticianSelect']) ? $_POST['beauticianSelect'] : NULL;
+// ✅ Use customer_id since Appointments table uses CustomerID
+$customer_id   = isset($data['customer_id']) ? (int)$data['customer_id'] : null;
+$date          = isset($data['appointmentDate'])  ? trim($data['appointmentDate'])  : '';
+$time          = isset($data['appointmentTime'])  ? trim($data['appointmentTime'])  : '';
+$beautician_id = isset($data['beauticianSelect']) && $data['beauticianSelect'] ? (int)$data['beauticianSelect'] : null;
 
-    // Use exact column names from your 'DESCRIBE Appointments' output
-    $sql = "INSERT INTO Appointments (CustomerID, BeauticianID, Appointment_Date, Appointment_Time, Status) 
-            VALUES (?, ?, ?, ?, 'scheduled')";
+if (!$customer_id) {
+    http_response_code(401);
+    echo json_encode(["success" => false, "message" => "Login required"]);
+    exit;
+}
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("iiss", $customer_id, $beautician_id, $date, $time);
+if (empty($date) || empty($time)) {
+    http_response_code(400);
+    echo json_encode(["success" => false, "message" => "Date and time are required"]);
+    exit;
+}
 
-    if ($stmt->execute()) {
-        // Redirect to dashboard on success
-        header("Location: dashboard.html?status=success");
-    } else {
-        echo "Error: " . $stmt->error;
-    }
+try {
+    $stmt = $conn->prepare("INSERT INTO Appointments (CustomerID, BeauticianID, Appointment_Date, Appointment_Time, Status) 
+                            VALUES (?, ?, ?, ?, 'scheduled')");
+    $stmt->execute([$customer_id, $beautician_id, $date, $time]);
+    
+    echo json_encode([
+        "success"       => true,
+        "message"       => "Appointment booked successfully",
+        "appointmentId" => $conn->lastInsertId()
+    ]);
+} catch (PDOException $e) {
+    error_log("Error booking appointment: " . $e->getMessage());
+    http_response_code(500);
+    echo json_encode(["success" => false, "message" => "Failed to book appointment: " . $e->getMessage()]);
 }
 ?>

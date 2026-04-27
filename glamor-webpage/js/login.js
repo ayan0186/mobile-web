@@ -8,23 +8,24 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     try {
         const response = await fetch('login.php', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: email,
-                password: password
-            })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
         });
         
         const result = await response.json();
         
         if (result.success) {
-            // Login successful - store user info and redirect to dashboard
-            setUserInfo(result.user_id, result.role);
-            window.location.href = 'dashboard.html';
+            // ✅ Store both user_id and customer_id
+            localStorage.setItem('user_id', result.user_id);
+            localStorage.setItem('customer_id', result.customer_id);
+            localStorage.setItem('role', result.role);
+            
+            if (result.role === 'admin') {
+                window.location.href = 'admin-dashboard.html';
+            } else {
+                window.location.href = 'dashboard.html';
+            }
         } else {
-            // Show error message
             errorMessage.textContent = result.message || 'Login failed. Please try again.';
             errorMessage.style.display = 'block';
         }

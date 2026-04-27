@@ -1,37 +1,16 @@
 <?php
-// Database configuration using SQLite
+$host     = '127.0.0.1';
+$dbname   = 'salon_db';   // ← replace with your actual MySQL database name
+$username = 'root';       // ← replace with your MySQL username
+$password = '40633920050122Ay@n';           // ← replace with your MySQL password
+
 try {
-    $dbfile = __DIR__ . '/salon.db';
-    
     $conn = new PDO(
-        "sqlite:" . $dbfile,
-        null,
-        null,
+        "mysql:host=$host;dbname=$dbname;charset=utf8",
+        $username,
+        $password,
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
-    
-    // Create Users table if it doesn't exist
-    $conn->exec("CREATE TABLE IF NOT EXISTS Users (
-        UserID INTEGER PRIMARY KEY AUTOINCREMENT,
-        FirstName TEXT,
-        LastName TEXT,
-        Email TEXT UNIQUE NOT NULL,
-        Phone TEXT,
-        Password_Hash TEXT NOT NULL,
-        Role TEXT DEFAULT 'customer'
-    )");
-    
-    // Create Appointments table if it doesn't exist
-    $conn->exec("CREATE TABLE IF NOT EXISTS Appointments (
-        AppointmentID INTEGER PRIMARY KEY AUTOINCREMENT,
-        UserID INTEGER NOT NULL,
-        BeauticianID INTEGER,
-        Appointment_Date TEXT NOT NULL,
-        Appointment_Time TEXT NOT NULL,
-        Status TEXT DEFAULT 'scheduled',
-        FOREIGN KEY(UserID) REFERENCES Users(UserID)
-    )");
-    
 } catch (PDOException $e) {
     header('Content-Type: application/json');
     http_response_code(500);

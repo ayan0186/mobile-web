@@ -1,19 +1,14 @@
-// Booking functionality
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if user is logged in
     if (!isLoggedIn()) {
         window.location.href = 'sign-in.html';
         return;
     }
     
-    // Display welcome message
     const customerName = document.getElementById('customerName');
     if (customerName) {
-        customerName.textContent = 'User ' + getUserId();
+        customerName.textContent = 'User ' + localStorage.getItem('customer_id');
     }
     
-    // Handle form submission
     const bookingForm = document.getElementById('bookingForm');
     if (bookingForm) {
         bookingForm.addEventListener('submit', handleBooking);
@@ -23,22 +18,21 @@ document.addEventListener('DOMContentLoaded', function() {
 async function handleBooking(e) {
     e.preventDefault();
     
-    const date = document.getElementById('appointmentDate').value;
-    const time = document.getElementById('appointmentTime').value;
+    const date      = document.getElementById('appointmentDate').value;
+    const time      = document.getElementById('appointmentTime').value;
     const beautician = document.getElementById('beauticianSelect').value;
-    const errorMessage = document.getElementById('errorMessage');
+    const errorMessage   = document.getElementById('errorMessage');
     const successMessage = document.getElementById('successMessage');
     
     try {
-        const response = await fetch('booking.php', {
+        const response = await fetch('process-booking.php', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                appointmentDate: date,
-                appointmentTime: time,
-                beauticianSelect: beautician
+                appointmentDate:  date,
+                appointmentTime:  time,
+                beauticianSelect: beautician,
+                customer_id: localStorage.getItem('customer_id') // ✅ use customer_id
             })
         });
         
@@ -48,14 +42,8 @@ async function handleBooking(e) {
             successMessage.textContent = result.message;
             successMessage.style.display = 'block';
             errorMessage.style.display = 'none';
-            
-            // Reset form
             document.getElementById('bookingForm').reset();
-            
-            // Redirect to dashboard after 2 seconds
-            setTimeout(() => {
-                window.location.href = 'dashboard.html';
-            }, 2000);
+            setTimeout(() => { window.location.href = 'dashboard.html'; }, 2000);
         } else {
             errorMessage.textContent = result.message || 'Booking failed';
             errorMessage.style.display = 'block';
